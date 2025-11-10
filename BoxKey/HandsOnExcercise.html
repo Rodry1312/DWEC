@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Key Character Control</title>
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden; 
+        }
+
+        
+        #character {
+            position: absolute; 
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            border-radius: 8px; 
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            transition: top 0.05s ease-out, left 0.05s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="character"></div>
+
+    <script>
+        // Get the character element
+        const character = document.getElementById('character');
+
+        // Define movement speed (in pixels)
+        const moveSpeed = 15;
+
+        // Get the position (using 'px')
+        let x = window.innerWidth / 2;
+        let y = window.innerHeight / 2;
+
+        // Function to update the character's position on the screen
+        function updatePosition() {
+           
+            character.style.left = x + 'px';
+            character.style.top = y + 'px';
+           
+        }
+
+        // Initialize position
+        updatePosition();
+
+        // Event listener for keyboard key presses
+        document.addEventListener('keydown', (event) => {
+           
+            switch (event.key) {
+                case 'ArrowUp':
+                    y -= moveSpeed;
+                    event.preventDefault(); 
+                    break;
+                case 'ArrowDown':
+                    y += moveSpeed;
+                    event.preventDefault();
+                    break;
+                case 'ArrowLeft':
+                    x -= moveSpeed;
+                    event.preventDefault();
+                    break;
+                case 'ArrowRight':
+                    x += moveSpeed;
+                    event.preventDefault();
+                    break;
+                default:
+                    return; 
+            }
+
+            
+            updatePosition();
+        });
+    </script>
+
+</body>
+</html>
