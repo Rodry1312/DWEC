@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Basics</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+  <h1>Pet Store Profile Management</h1>
+  <div class="container">
+    <div class="left">
+  <form id="form">
+    <div class="form-group">
+      <label for="name">Pet Name</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="name" 
+        name="name" />
+      <div class="error-message"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input
+        type="text" 
+        class="form-control" 
+        id="description" 
+        name="description" /> 
+      <div class="error-message"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="imgURL">Image URL</label>
+      <input
+        type="url" 
+        class="form-control" 
+        id="imgURL" 
+        name="imgURL" />
+      <div class="error-message"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="birthDate">Birth date</label>
+      <input
+        type="date"
+        class="form-control"
+        id="birthDate"
+        name="birthDate" 
+      />
+      <div class="error-message"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input
+        type="number"
+        class="form-control"
+        id="price"
+        name="price" 
+      />
+      <div class="error-message"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="petCode">Pet Code</label>
+      <input
+        type="text"
+        class="form-control"
+        id="petCode"
+        name="petCode" 
+      />
+      <div class="error-message"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="sold">Sold</label>
+      <input
+        type="checkbox"
+        class="form-control"
+        id="sold"
+        name="sold" 
+      />
+    </div>
+
+    <button type="submit">Add Pet</button>
+  </form>
+</div>
+    <div class="right">
+      <h3>Registered Pets</h3>
+      <div id="posts">
+      </div>
+    </div>
+</body>
+<script src="js/main.js" type="module"></script>
+
+</html>
